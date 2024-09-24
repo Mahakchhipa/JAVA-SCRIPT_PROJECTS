@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BMI-Projects</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .center-div {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        background-color: cornsilk;
+
+        font-size: 25px;
+        font-weight: 700;
+      }   
+
+      .btn {
+        padding: 10px 45px;
+        border: 3px solid black;
+        border-radius: 10px;
+        margin: 5px 0px;
+        font-weight: bold;
+        font-size: large;
+      }
+
+      h1 {
+        font-weight: bold;
+
+        /* background-image: url(images.png);
+
+        background-repeat: repeat;
+        -webkit-text-fill-color: transparent; */
+        margin-top: 200px;
+        font-size: 60px;
+        text-align: center;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-family: "Steelfish Rg", "helvetica neue", helvetica, arial,
+          sans-serif;
+        font-weight: 800;
+        -webkit-font-smoothing: antialiased;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container center-div">
+      <form>
+        <h1> BMI CALCULATOR</h1>
+        <p><label> Hieght In CM :</label> <input type="text" id="height" /></p>
+        <p><label> Weight In KG :</label> <input type="text" id="weight" /></p>
+        <button class="btn">Calculate</button>
+        <div id="results"></div>
+        <div id="wieght-guide">
+          <h4>BMI Weight Guide</h4>
+          <p>Under wieght = Less than 18.5</p>
+          <p>Normal Range 18.6 and 24.9</p>
+          <p>Over wieght = Grater than 24.9</p>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      //   const form = document.querySelector('form');
+      //   form.addEventListener('submit', function(e){
+      //     e.preventDefault();
+
+      //   const height = parseInt(document.querySelector('#hieght').value);
+      //   const weight = parseInt(document.querySelector('#wieght').value);
+      //   const results = document.querySelector('#results');
+
+      //   if (hieght === '' || hieght < 0 || isNaN(hieght)) {
+      //     results.innerHTML = `please enter a vaild hieght ${hieght}`;
+      //   }
+      //   else if (wieght ==='' || wieght < 0 || isNaN(weight)) {
+      //     results.innerHTML = `please enter a vaild  wieght number ${wieght}`;
+      //   }
+
+      //   else {
+      //     const BMI = (wieght / ((hieght * hieght) / 10000)).toFixed(2);
+      //     results.innerHTML = `<span> ${BMI}</span>`;
+      //   };
+      // });
+
+      const form = document.querySelector("form");
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const height = parseInt(document.querySelector("#height").value); // Correct spelling
+        const weight = parseInt(document.querySelector("#weight").value); // Correct spelling
+        const results = document.querySelector("#results");
+
+        if (height === "" || height < 0 || isNaN(height)) {
+          results.innerHTML = `Please enter a valid height: ${height}`;
+        } else if (weight === "" || weight < 0 || isNaN(weight)) {
+          results.innerHTML = `Please enter a valid weight: ${weight}`;
+        } else {
+          const BMI = (weight / ((height * height) / 10000)).toFixed(2);
+          results.innerHTML = `<span>${BMI}</span>`;
+        }
+      });
+
+      t;
+    </script>
+  </body>
+</html>
